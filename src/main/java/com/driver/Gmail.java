@@ -124,6 +124,19 @@ public class Gmail extends Email {
         while(q.size()!=0){
             inbox.add(q.remove());
         }
+        while(trash.size()!=0){
+            Message msg=trash.remove();
+//            Date date=msg.getDate();
+//            int startFlag=msg.getDate().compareTo(start);
+//            int endFlag=end.compareTo(msg.getDate());
+            if(msg.getDate().compareTo(start)>=0 && end.compareTo(msg.getDate())>=0){
+                cnt++;
+            }
+            q.add(msg);
+        }
+        while(q.size()!=0){
+            trash.add(q.remove());
+        }
         return cnt;
 
     }
