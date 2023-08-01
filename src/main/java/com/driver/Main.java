@@ -13,9 +13,14 @@ public class Main {
 
         Gmail gmail = new Gmail("accio@gmail.com", 3);
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "Assignment Completed?");
-        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "We are running out of time.");
-        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Abhishek", "Assignment to be uploaded on database.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("20/12/2022"), "Tushar", "We are running out of time.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("20/12/2022"), "Abhishek", "Assignment to be uploaded on database.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022"), "Tushar", "Everything looks good.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("24/12/2022"), "Tushar", "Everything not looks  good.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Tushar", "Everything really looks good.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("25/12/2022"), "Tushar", "Everything not fine or looks good.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("26/12/2022"), "Tushar", "Everything fine.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("24/12/2022"), "Tushar", "Everything hello  good.");
 
         System.out.println("Total " + gmail.getInboxSize() + " mails in inbox.");
         System.out.println("There are " + gmail.findMailsBetweenDates(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022")) + " mails between given dates!");

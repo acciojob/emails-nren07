@@ -113,7 +113,9 @@ public class Gmail extends Email {
         Queue<Message>q=new LinkedList<>();
         while(inbox.size()!=0){
             Message msg=inbox.remove();
-            if(msg.getDate().compareTo(start)>=0 && end.compareTo(msg.getDate())>=0){
+            int startFlag=msg.getDate().compareTo(start);
+            int endFlag=end.compareTo(msg.getDate());
+            if(msg.getDate().compareTo(start)>=0 && end.compareTo(msg.getDate())<=0){
                 cnt++;
             }
             q.add(msg);
