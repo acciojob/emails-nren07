@@ -34,13 +34,17 @@ public class Gmail extends Email {
     public Gmail(String emailId, int inboxCapacity) {
         super(emailId);
         this.inboxCapacity=inboxCapacity;
-        this.inbox=new PriorityQueue<>((a,b)->{
-            if(a.getDate().compareTo(b.getDate())<0) return 0;
-            else return 1;
+        this.inbox=new PriorityQueue<>(new Comparator<Message>() {
+            @Override
+            public int compare(Message a, Message b) {
+                return a.getDate().compareTo(b.getDate());
+            }
         });
-        this.trash=new PriorityQueue<>((a,b)->{
-            if(a.getDate().compareTo(b.getDate())<0) return 0;
-            else return 1;
+        this.trash=new PriorityQueue<>(new Comparator<Message>() {
+            @Override
+            public int compare(Message a, Message b) {
+                return a.getDate().compareTo(b.getDate());
+            }
         });
     }
 
@@ -49,7 +53,7 @@ public class Gmail extends Email {
         // It is guaranteed that:
         // 1. Each mail in the inbox is distinct.
         // 2. The mails are received in non-decreasing order. This means that the date of a new mail is greater than equal to the dates of mails received already.
-        if(inbox.size()>inboxCapacity){
+        if(inbox.size()>=inboxCapacity){
             trash.add(inbox.remove());
         }
         inbox.add(new Message(date,sender,message));

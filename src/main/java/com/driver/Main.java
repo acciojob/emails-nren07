@@ -13,7 +13,7 @@ public class Main {
 
         Gmail gmail = new Gmail("accio@gmail.com", 3);
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "Assignment Completed?");
-        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Tushar", "We are running out of time.");
+        gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "We are running out of time.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022"), "Abhishek", "Assignment to be uploaded on database.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022"), "Tushar", "Everything looks good.");
 
@@ -33,6 +33,7 @@ public class Main {
         workspace.addMeeting(new Meeting(LocalTime.parse("13:30"), LocalTime.parse("18:00")));
         workspace.addMeeting(new Meeting(LocalTime.parse("18:20"), LocalTime.parse("19:10")));
         workspace.addMeeting(new Meeting(LocalTime.parse("19:50"), LocalTime.parse("21:05")));
+
         System.out.println("Maximum meetings you can attend in a day is " + workspace.findMaxMeetings());
     }
 }
