@@ -43,13 +43,13 @@ public class Workspace extends Gmail{
                 return time1.compareTo(time2);
             }
         };
-        Collections.sort(calendar, Comparator.comparing(Meeting::getEndTime));
+        Collections.sort(calendar, (a,b)->a.getEndTime().compareTo(b.getEndTime()));
 
         LocalTime endTime=calendar.get(0).getEndTime();
         int cnt=1;
         for(int i=1;i<calendar.size();i++){
             LocalTime currStartTime=calendar.get(i).getStartTime();
-            if(currStartTime.isAfter(endTime)) {
+            if(currStartTime.compareTo(endTime)>0) {
                 cnt++;
                 endTime=calendar.get(i).getEndTime();
             }

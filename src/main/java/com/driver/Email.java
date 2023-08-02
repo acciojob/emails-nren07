@@ -31,11 +31,16 @@ public class Email {
             if(ch>='a' && ch<='z') lowercase=true;
             else if(ch>='A' && ch<='Z')  uppercase=true;
             else if(ch>='0' && ch<='9')  digit=true;
-            else if(ch>=32 && ch<=126)  specialCharacter=true;
+            else specialCharacter=true;
         }
-        if(this.password.equals(oldPassword) && newPassword.length()>=8
-            && lowercase && uppercase && digit && specialCharacter){
-                this.password=newPassword;
+        if(this.password.equals(oldPassword)){
+            if( newPassword.length()>=8 && lowercase && uppercase && digit && specialCharacter) {
+                this.password = newPassword;
+            }else{
+                System.out.println("new password is invalid");
+            }
+        }else{
+            System.out.println("old password does not match");
         }
     }
 }
