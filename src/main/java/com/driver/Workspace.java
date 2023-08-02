@@ -49,7 +49,7 @@ public class Workspace extends Gmail{
         int cnt=1;
         for(int i=1;i<calendar.size();i++){
             LocalTime currStartTime=calendar.get(i).getStartTime();
-            if(currStartTime.compareTo(endTime)>0) {
+            if(currStartTime.isAfter(endTime)) {
                 cnt++;
                 endTime=calendar.get(i).getEndTime();
             }

@@ -12,7 +12,7 @@ public class Main {
 
         email.changePassword("Accio@123", "V12@v123");
 
-        Gmail gmail = new Gmail("accio@gmail.com", 3);
+        Gmail gmail = new Gmail("accio@gmail.com", 10);
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), "Tushar", "Assignment Completed?");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("20/12/2022"), "Tushar", "We are running out of time.");
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("20/12/2022"), "Abhishek", "Assignment to be uploaded on database.");
