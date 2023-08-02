@@ -39,6 +39,7 @@ public class Gmail extends Email {
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
         for(int i=0;i<inbox.size();i++){
             if(inbox.get(i).getMessage().equals(message)){
+                trash.add(inbox.get(i));
                 inbox.remove(i);
                 break;
             }
@@ -67,7 +68,7 @@ public class Gmail extends Email {
         int cnt=0;
         for(int i=0;i<inbox.size();i++){
             Message msg=inbox.get(i);
-            if(msg.getDate().compareTo(start)>0 && end.compareTo(msg.getDate())>0){
+            if(msg.getDate().compareTo(start)>=0 && end.compareTo(msg.getDate())>=0){
                 cnt++;
             }
         }
